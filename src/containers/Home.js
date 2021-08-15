@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import Book from '../components/book/Book';
+
 const Home = ({ navigation }) => {
   return (
     <div className='App'>

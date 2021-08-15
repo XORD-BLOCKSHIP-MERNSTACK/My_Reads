@@ -1,4 +1,5 @@
 import React from 'react';
+import BookShelfControl from './BookShelfControl';
 
 const Book = () => {
   return (
@@ -9,19 +10,12 @@ const Book = () => {
           style={{
             width: 128,
             height: 193,
-            backgroundImage: `url(${
-              book.imageLinks
-                ? book.imageLinks.thumbnail
-                : 'icons/book-placeholder.svg'
-            })`,
           }}
         />
-        <BookshelfChanger book={book} shelf={shelf} onMove={onMove} />
+        <BookShelfControl />
       </div>
-      <div className='book-title'>{book.title}</div>
-      <div className='book-authors'>
-        {book.authors ? book.authors.join(', ') : 'Unknown Author'}
-      </div>
+      <div className='book-title'>"Harry Porter"</div>
+      <div className='book-authors'>Hello</div>
     </div>
   );
 };
