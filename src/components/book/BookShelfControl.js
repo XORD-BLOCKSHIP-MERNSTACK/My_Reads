@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const BookShelfControl = () => {
+const BookShelfControl = (props) => {
+  const { book, move, shelf } = props;
+  const [value, setValue] = useState(shelf);
+
+  const handleMove = (e) => {
+    setValue(e.target.value);
+    move(book, value);
+  };
+
   return (
-    <div className='book-shelf-control'>
-      <select>
+    <div className='book-shelf-changer'>
+      <select value={value} onChange={handleMove}>
         <option value='move' disabled>
           Move to...
         </option>

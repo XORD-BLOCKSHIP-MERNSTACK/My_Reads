@@ -1,17 +1,13 @@
 import React from 'react';
 
-// Importing context to wrap our app component
-import ContextProvider from './context/BookContext';
+// Styling
+import './App.css';
 
 // Importing Navigation which contain our app links
 import Navigation from './navigation/Navigation';
 
-function App() {
-  return (
-    <ContextProvider>
-      <Navigation />
-    </ContextProvider>
-  );
-}
+const App = () => {
+  return <Navigation />;
+};
 
 export default App;
