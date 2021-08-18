@@ -1,4 +1,4 @@
-html,
+tml,
 body,
 .root {
     height: 100%;
@@ -20,12 +20,6 @@ body,
     padding: 10px 0;
     background: #2e7c31;
     text-align: center;
-    height: 66px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
 }
 
 .list-books-title h1 {
@@ -35,7 +29,7 @@ body,
 }
 
 .list-books-content {
-    padding: 76px 0;
+    padding: 0 0 80px;
     flex: 1;
 }
 
@@ -69,6 +63,7 @@ body,
     height: 50px;
     border-radius: 50%;
     background: #2e7d32;
+    background-image: url('./assets/icons/add.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 28px;
@@ -113,6 +108,7 @@ body,
     left: 15px;
     width: 50px;
     height: 53px;
+    background-image: url('./assets/icons/arrow-back.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 28px;
@@ -179,6 +175,7 @@ button:active {
     height: 40px;
     border-radius: 50%;
     background: #60ac5d;
+    background-image: url('./assets/icons/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px;

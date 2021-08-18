@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // Components
 import BookShelf from '../components/book/BookShelf';
 
+// Api
 import * as BooksApi from '../api/booksApi';
 
 // Book Shelves
@@ -17,9 +18,8 @@ const bookshelves = [
 
 const Home = () => {
   const [books, setBooks] = useState([]);
-  console.log('Incoming Data', books);
 
-  // Calling Api
+  // Calling Api and fetching all books
   useEffect(() => {
     const fetchApi = async () => {
       await BooksApi.getAll()
@@ -33,6 +33,7 @@ const Home = () => {
 
   // Move books on different shelf function
   const updateShelf = (book, shelf) => {
+    console.log('Move to =>', book, shelf);
     BooksApi.update(book, shelf).catch((err) => {
       console.log(err);
     });
@@ -62,7 +63,7 @@ const Home = () => {
         </div>
       </div>
       <div className='open-search'>
-        <Link to='search'>
+        <Link to='/search'>
           <button>Add a Book</button>
         </Link>
       </div>
