@@ -18,7 +18,7 @@ const Book = (props) => {
               backgroundImage: `url(${
                 book.imageLinks
                   ? book.imageLinks.thumbnail
-                  : 'icons/book-placeholder.svg'
+                  : './assets/book.jpg'
               })`,
             }}
           />
