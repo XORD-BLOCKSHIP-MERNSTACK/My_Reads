@@ -7,12 +7,29 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import Search from '../containers/Search';
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const { books, move, search, reset, searchedBooks } = props;
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/search' component={Search} />
+        <Route
+          exact
+          path='/'
+          render={() => <Home books={books} move={move} />}
+        />
+        <Route
+          exact
+          path='/search'
+          render={() => (
+            <Search
+              books={books}
+              move={move}
+              search={search}
+              reset={reset}
+              searchedBooks={searchedBooks}
+            />
+          )}
+        />
         <Route>Error 404</Route>
       </Switch>
     </Router>
