@@ -28,9 +28,9 @@ const App = () => {
   }, []);
 
   // Move books on different shelf function
-  const updateShelf = (book, shelf) => {
-    console.log('Move to =>', book, shelf);
-    BooksApi.update(book, shelf).catch((err) => {
+  const updateShelf = async (book, shelf) => {
+    // console.log('Move to =>', book, shelf);
+    await BooksApi.update(book, shelf).catch((err) => {
       console.log(err);
     });
     if (shelf === 'none') {
@@ -42,9 +42,9 @@ const App = () => {
   };
 
   // Search books function
-  const searchBooks = debounce(200, false, (query) => {
+  const searchBooks = debounce(200, false, async (query) => {
     if (query.length > 0) {
-      BooksApi.search(query).then((book) => {
+      await BooksApi.search(query).then((book) => {
         if (book.error) {
           setSearchBooks([]);
         } else {
